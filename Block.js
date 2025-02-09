@@ -41,7 +41,6 @@ class Block {
   }
   drawX() {
     let margin = -size / 2;
-
     line(
       margin + offset / 2,
       margin + offset / 2,
