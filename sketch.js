@@ -5,8 +5,10 @@ let cols;
 let rows;
 let offset = 4;
 let blocks = [];
+let Colour = "black";
 function setup() {
-  createCanvas(400, 400);
+  document.getElementById("Change").addEventListener("click", Change);
+  createCanvas(windowHeight / 2, windowHeight / 2);
   rectMode(CENTER);
   angleMode(DEGREES);
   cols = width / size;
@@ -18,9 +20,11 @@ function setup() {
     }
   }
 }
-
+function Change() {
+  Colour = Colour === "white" ? "black" : "white";
+}
 function draw() {
-  background(0);
+  background(Colour);
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       blocks[i][j].move();
