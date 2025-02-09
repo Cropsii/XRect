@@ -34,7 +34,7 @@ class Block {
       }
     }
     if (this.angle > 0 && this.angle < 180) {
-      this.angle += 5;
+      this.angle += 4;
     } else {
       this.angle = 0;
       if (this.c.levels[0] > 70) {
@@ -46,7 +46,8 @@ class Block {
   }
 
   drawRec() {
-    rect(0, 0, size - offset, size - offset);
+    let cornerRadius = map(this.angle, 0, 180, 0, (size - offset) / 2);
+    rect(0, 0, size - offset, size - offset, cornerRadius);
   }
 
   drawX() {
